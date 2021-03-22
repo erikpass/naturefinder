@@ -1,0 +1,25 @@
+.map-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.map-container-container {
+  position: relative;
+  width: clamp(300px, 100%, 600px);
+  height: 600px;
+  border: 3px solid black;
+}
+
+.coordinate-display span {
+  color: #fafafa;
+  background-color: rgb(31, 31, 31);
+  border: 1px solid gray;
+  padding: 8px;
+}
+
+.coordinate-display span:first-child {
+  border-radius: 2em 2em 2em 0;
+}

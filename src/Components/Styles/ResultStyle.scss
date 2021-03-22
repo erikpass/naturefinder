@@ -1,0 +1,17 @@
+.search-result {
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2em;
+
+
+  background-color: #FAFAFA;
+
+  &:nth-child(even) {
+    background-color: #AAA;
+  }
+
+  &.selectedResult {
+    background-color: purple;
+  }
+}
