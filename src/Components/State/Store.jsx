@@ -15,9 +15,9 @@ const initialState = {
 const Store = ({children}) => {
   const [state, dispatch] = useReducer(Reducer, initialState);
   
-  useEffect(() => {
+  /* useEffect(() => {
     console.log(state)
-  }, [state])
+  }, [state]) */
 
 
   return(

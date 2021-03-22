@@ -1,3 +1,9 @@
+# Naturefinder APP
+
+A small project that uses the REST api at https://explorer.natureserve.org/ to query data about species by country and then highlight the countries that species can be found in.
+Several countries return no results.
+Some countries may be difficult to find on map due to being on very small landmasses.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

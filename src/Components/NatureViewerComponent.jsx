@@ -8,14 +8,14 @@ export default function NatureViewerComponent() {
   const [state, dispatch] = useContext(Context);
 
   useEffect(() => {
-    console.log(state.currentPage)
+    //console.log(state.currentPage)
     
     const searchParameters = (state.searchNation) ? 
       { ...SEARCHFORM, locationCriteria: [{ paramType: "nation", nation: state.searchNation }], pagingOptions: { page: state.currentPage, recordsPerPage: 20 } } :
       { ...SEARCHFORM, pagingOptions: { page: state.currentPage, recordsPerPage: 20 } 
     }
     
-    console.log(searchParameters)
+    //console.log(searchParameters)
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type':'application/json'},
