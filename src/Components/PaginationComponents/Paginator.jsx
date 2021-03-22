@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { Context } from '../State/Store';
 import actions from "./../Actions/index";
-import "./../Styles/PaginatorStyle.scss"
 
 export default function Paginator() {
   const [state, dispatch] = useContext(Context);
@@ -12,7 +11,7 @@ export default function Paginator() {
   }, []);
 
   const incrementPage = () => {
-    if (state.currentPage >= state.maxPages) {
+    if (state.currentPage === state.maxPages) {
       return;
     }
     console.log('increment')
@@ -29,10 +28,11 @@ export default function Paginator() {
 
   return (
     <div className="paginator">
-      <button onClick={() => decrementPage()}>Back</button>
-      <button onClick={() => incrementPage()}>Next</button>
-      <p>{state.maxPages}</p>
-      <p>{state.currentPage}</p>
+      <div>
+        <button onClick={() => decrementPage()}>Back</button>
+        <span>{`Page ${state.currentPage} of ${state.maxPages}`}</span>
+        <button onClick={() => incrementPage()}>Next</button>
+      </div>
     </div>
   );
 };

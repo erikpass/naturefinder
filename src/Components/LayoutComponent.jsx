@@ -11,8 +11,10 @@ export default function LayoutComponent() {
       <div className="layout">
         <NavbarComponent />
         <MapComponent />
-        <SearchFormComponent />
-        <NatureViewerComponent />
+        <div className="listComponent bg-white rounded-x1 shadow-md">
+          <SearchFormComponent />
+          <NatureViewerComponent />
+        </div>
       </div>
     </Store>
   )

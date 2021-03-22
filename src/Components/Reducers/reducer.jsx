@@ -22,7 +22,7 @@ export default function Reducer(state, action) {
       return { ...state, maxPages: action.payload }
     }
     case actions.SET_HTTP_RESPONSE: {
-      return { ...state, httpResponse: action.payload, maxPages: action.payload.resultsSummary.totalPages }
+      return { ...state, httpResponse: action.payload, maxPages: action.payload.resultsSummary.totalPages - 1}
     }
 
 

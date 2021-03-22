@@ -1,50 +1,220 @@
 .layout{
   display: grid;
-  margin-left: 30px;
-  margin-right: 30px;
   height: 100vh;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 70px 150px auto;
+  gap: 30px;
+  grid-template-rows: 70px auto;
   grid-template-areas: 
                 "nav nav"
-                "map searchform"
-                "map searchresults";
+                "map list";
+  justify-content: center;
+
+  @media only screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 300px 150px 700px;
+    grid-template-areas: 
+                "nav"
+                "map"
+                "list";
+
+    .map-component {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      .map-container-container {
+        width: 95vw;
+        height: 330px;
+      }
+    }
+
+    .searchlist-component {
+      justify-self: center;
+      width: 95vw;
+    }
+
+  }
 } 
 
-.searchform-component {
-  grid-area: searchform;
-  background-color: rgb(132, 168, 33);
-}
+.listComponent {
+  grid-area: list;
+  background-color: white;
+  box-shadow: 20px;
+  width: 98%;
+  margin: 15px auto 15px auto;
 
-.searchlist-component {
-  grid-area: searchresults;
-  overflow-y: scroll;
+  .searchform-component {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
 
-  &::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: #aaa;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: #888;
-
-    &:hover {
-      background-color: #555;
+    >select {
+      width: 250px;
+      height: 2em;
     }
-  }
-}
 
+    >.paginator {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      >div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 1rem;
+
+        button {
+          position: relative;
+          font-size: 20px;
+          padding: 8px;
+          box-shadow: 0 10px 5px 0 rgba(0, 0, 0, 0.1);
+          
+          &:active {
+            transform: translateY(10px);
+            box-shadow: 0;
+          }
+        }
+
+        span {
+          font-size: 20px;
+          text-decoration: underline;
+          margin-right: 1rem;
+          margin-left: 1rem;
+          transform: translateY(6px);
+        }
+
+      }
+
+    }
+
+    .custom-select {
+      position: relative;
+      width: fit-content;
+
+
+      .custom-select-arrow {
+        --size: 1em;
+        --color: rgba(180,180,180, 1);
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        background: whitesmoke;
+        height: 100%;
+        width: 4rem;
+        pointer-events: none;
+        
+        &::after,&::before {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 0;
+          right: 25%;
+          bottom: 40%;
+        }
+
+        &::before {
+          border-left: var(--size) solid transparent;
+          border-right: var(--size) solid transparent;
+          border-top: var(--size) solid var(--color);
+          transform: translateY(10px);
+        }
+
+        &::after {
+          border-left: var(--size) solid transparent;
+          border-right: var(--size) solid transparent;
+          border-bottom: var(--size) solid var(--color);
+          transform: translateY(-10px);
+        }
+      }
+
+      select {
+        box-shadow: 0 5px 15px rgba($color: #000000, $alpha: 0.1);
+        font-size: 1.5rem;
+        padding: .5em 1em .5em .5em;
+        background: white;
+        color: black;
+        border: 0;
+        text-overflow: ellipsis;
+      }
+
+    }
+
+  }
+  
+  .searchlist-component {
+    overflow-y: scroll;
+    width: 100%;
+
+    span {
+      text-overflow: wrap;
+      padding: 3px 0 2px 0;
+    }
+
+    span.scientific-name {
+      font-style: italic;
+      font-size: 16px;
+    }
+
+    span.common-name {
+      font-size: large;
+      font-weight: 600;
+    };
+
+    .search-result {
+      display: flex;
+      flex-direction: column;
+      
+      padding-left: 16px;
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+        background-color: whitesmoke;
+      }
+
+      &.selectedResult {
+        background-color: rgb(240, 240, 240);
+      }
+
+    }
+    
+  }
+
+  
+}
 
 
 .map-component {
   grid-area: map;
-  margin-left: 30px;
+  margin-left: 25px
 }
 
 .nav-component {
   grid-area: nav;
-  background-color: rgb(122, 122, 223);
+  background-color: rgba(110, 231, 183, 0.3);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 10px;
+
+  >span {
+    font-size: 18px;
+    margin-right: 8px;
+    margin-top: 10px;
+  }
+
+  >div>a {
+    display: flex;
+    align-items: center;
+    
+    >span {
+      font-size: 24px;
+      font-weight: 600;
+      margin-left: 8px;
+      margin-top: 6px;
+    }
+  }
 }

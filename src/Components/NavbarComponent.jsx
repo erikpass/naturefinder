@@ -2,9 +2,15 @@ import React from 'react'
 
 export default function NavbarComponent() {
   return (
-    <div className="nav-component">
-      Data obtained from 
-      <a href="https://explorer.natureserve.org/"> NatureServe</a>
-    </div>
+    <header className="nav-component lg:px-16 px-6 max-w-full">
+      <span>Data source: </span>
+      <div>
+        <a href="https://explorer.natureserve.org/">
+          <img className="w-12 h-12 mt-2.5" src="/natureserve.jpg" alt="natureserve" />
+          <span> NatureServe</span>
+        </a>
+      </div>
+      
+    </header>
   )
 }

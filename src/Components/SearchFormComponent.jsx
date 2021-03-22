@@ -3,6 +3,7 @@ import { Context } from './State/Store'
 import actions from './Actions/index'
 import {ISOlist} from "./../API/NationISO"
 import Paginator from "./PaginationComponents/Paginator"
+import Dropdown from "./Dropdown/Dropdown"
 
 export default function SearchFormComponent() {
   const [, dispatch] = useContext(Context)
@@ -27,11 +28,13 @@ export default function SearchFormComponent() {
 
   return (
     <div className="searchform-component">
-      <label htmlFor="nationSelect">Search by nation:</label>
-      <select name="nationSelect" id="nationSelect" onChange={handleInputNation}>
-        <option key={"defaultOption"} value="" defaultValue={true}>Select nation to search by...</option>
-        {nationsOptions}
-      </select>
+      <div className="custom-select">
+        <select onChange={handleInputNation}>
+          <option key={"defaultOption"} value="" defaultValue={true}>Select nation to search by...</option>
+          {nationsOptions}
+        </select>
+        <span className="custom-select-arrow"></span>
+      </div>
       <Paginator />
     </div>
   )

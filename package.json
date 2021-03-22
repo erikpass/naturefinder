@@ -8,9 +8,9 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "mapbox-gl": "^2.1.1",
-    "node-sass": "^5.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-onclickoutside": "^6.10.0",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1",
     "worker-loader": "^3.0.8"
@@ -42,6 +42,7 @@
   "devDependencies": {
     "@tailwindcss/postcss7-compat": "^2.0.4",
     "autoprefixer": "^9.8.6",
+    "node-sass": "^5.0.0",
     "postcss": "^7.0.35",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.4"
   }
