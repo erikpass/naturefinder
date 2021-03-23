@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function NavbarComponent() {
   return (
-    <header className="nav-component lg:px-16 px-6 max-w-full">
+    <header className="nav-component">
       <span>Data source: </span>
       <div>
         <a href="https://explorer.natureserve.org/">

@@ -11,7 +11,7 @@ export default function LayoutComponent() {
       <div className="layout">
         <NavbarComponent />
         <MapComponent />
-        <div className="listComponent bg-white rounded-x1 shadow-md">
+        <div className="listComponent">
           <SearchFormComponent />
           <NatureViewerComponent />
         </div>

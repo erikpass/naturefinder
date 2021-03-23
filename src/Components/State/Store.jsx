@@ -1,15 +1,13 @@
-import {createContext, useEffect, useReducer} from 'react';
+import {createContext, useReducer} from 'react';
 import Reducer from "../Reducers/reducer";
 
 const initialState = {
-  searchField: "",
   searchNation: "",
   selectedId: "",
   nations: [],
   httpResponse: {},
   currentPage: 0,
-  maxPages: 0,
-  what: "what"
+  maxPages: 0
 }
 
 const Store = ({children}) => {

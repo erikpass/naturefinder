@@ -3,7 +3,6 @@ import { Context } from './State/Store'
 import actions from './Actions/index'
 import {ISOlist} from "./../API/NationISO"
 import Paginator from "./PaginationComponents/Paginator"
-import Dropdown from "./Dropdown/Dropdown"
 
 export default function SearchFormComponent() {
   const [, dispatch] = useContext(Context)
